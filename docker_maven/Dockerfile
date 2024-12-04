@@ -13,7 +13,7 @@ COPY settings.xml /root/.m2/settings.xml
 COPY server.js /usr/src/app/
 
 # Копируем скрипт entrypoint.sh
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/
 
 # Делаем скрипт исполняемым
 RUN chmod +x /usr/local/bin/entrypoint.sh
