@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Копируем файлы сайта (если есть)
-COPY /src/index.html /var/www/html
+COPY src/index.html /var/www/html
 
 # Устанавливаем права доступа
 RUN chown -R www-data:www-data /var/www/html
