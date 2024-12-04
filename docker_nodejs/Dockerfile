@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Копируем исходный код приложения
-COPY app.js .
+COPY . .
 
 # Открываем порт (для локального тестирования)
 EXPOSE 3000
