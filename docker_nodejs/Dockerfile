@@ -1,23 +1,8 @@
-# Используем официальный образ Node.js
-FROM node:14
-
-# Устанавливаем рабочую директорию
-WORKDIR /usr/src/app
-
-# Копируем файл package.json и package-lock.json (если есть)
-COPY package*.json ./
-
-# Устанавливаем зависимости
+FROM node:14-alpine
+WORKDIR /app
+COPY docker_nodejs/package.json ./
 RUN npm install
+COPY docker_nodejs/src /app
 
-# Копируем исходный код приложения
-COPY . .
-
-# Отладка: выводим список файлов в рабочей директории
-RUN ls -la
-
-# Открываем порт (для локального тестирования)
-EXPOSE 3000
-
-# Запускаем приложение
-CMD [ "node", "app.js" ]
+EXPOSE 80
+CMD ["npm", "start"] 

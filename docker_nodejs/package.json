@@ -1,13 +1,16 @@
 {
-  "name": "docker_nodejs",
+  "name": "simple-http-server",
   "version": "1.0.0",
-  "main": "app.js",
+  "description": "A very simple HTTP file server using Node.js standard library.",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "dependencies": {
-    "express": "^4.21.1"
+  "keywords": ["http", "server", "nodejs"],
+  "author": "Bogomolov Kirill",
+  "license": "MIT",
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/megakirill/niaspo-docker"
   }
 }
-
