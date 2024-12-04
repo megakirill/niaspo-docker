@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y nodejs npm && rm -rf /var/lib/apt/lists
 WORKDIR /usr/src/app
 COPY /settings.xml /root/.m2/settings.xml
 COPY /server.js /usr/src/app/
-COPY entrypoint.sh /usr/local/bin/
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 EXPOSE 8080
 
