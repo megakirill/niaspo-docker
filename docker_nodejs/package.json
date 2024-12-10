@@ -2,15 +2,11 @@
   "name": "simple-http-server",
   "version": "1.0.0",
   "description": "A very simple HTTP file server using Node.js standard library.",
-  "main": "src/server.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "keywords": ["http", "server", "nodejs"],
-  "author": "Bogomolov Kirill",
-  "license": "MIT",
-  "repository": {
-  "type": "git",
-  "url": "git+https://github.com/megakirill/niaspo-docker"
-  }
+  "author": "Krill Bogomolov",
+  "license": "MIT"
 }

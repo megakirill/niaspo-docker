@@ -1,11 +1,23 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
-app.get('/', (req, res) => {
-  res.send('Привет из Node.js приложения, запущенного в Docker-контейнере на облачном хостинге!');
+const PORT = 80;
+
+const server = http.createServer((req, res) => {
+    const filePath = path.join(__dirname, req.url);
+
+    fs.readFile(filePath, (err, data) => {
+        if (err) {
+            res.writeHead(404, { 'Content-Type': 'text/plain' });
+            res.end('File not found');
+        } else {
+            res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end(data);
+        }
+    });
 });
 
-app.listen(port, () => {
-  console.log(`Сервер запущен на порту ${port}`);
+server.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`);
 });
