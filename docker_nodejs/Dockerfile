@@ -1,7 +1,17 @@
 FROM node:14-alpine
+
+# Устанавливаем рабочую директорию
 WORKDIR /app
-COPY package*.json ./
+
+# Копируем файлы package.json и устанавливаем зависимости
+ADD package*.json ./
 RUN npm install
-COPY src/* .
+
+# Копируем содержимое папки src
+ADD src /app/src
+
+# Открываем порт 80
 EXPOSE 80
+
+# Запускаем приложение
 CMD ["npm", "start"]
